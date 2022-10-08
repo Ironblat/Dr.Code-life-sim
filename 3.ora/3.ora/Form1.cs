@@ -15,9 +15,13 @@ namespace _3.ora
     {
         int penztarca;
 
+        
+        
+
         public Form1()
         {
             InitializeComponent();
+            hunger_PB.Value = 100;
         }
 
 
@@ -39,10 +43,12 @@ namespace _3.ora
             if (nev == "pizza")
             {   
                 Fuggveny(450);
+                Eves(40);
             }
             else if (nev == "hamburger")
             {                   
                 Fuggveny(750);
+                Eves(50);
             }
             else if (nev == "kóla")
             {                   
@@ -51,15 +57,15 @@ namespace _3.ora
             else if (nev == "popcorn")
             {  
                 Fuggveny(100);
+                Eves(4);
             }
             else if (nev == "salata")
             {
                 Fuggveny(1000);
+                Eves(3);
+
             }
-            else if (nev == "villanyszamla")
-            {
-                Fuggveny(100000000);
-            }
+            
             
                 
                 penzosszeg_tb.Text = penztarca.ToString();
@@ -101,11 +107,17 @@ namespace _3.ora
             Thread.Sleep(1000);
             Time_PB.Value = 0;
             workh_TB.Value = 0;
+
+            if(workh_TB.Value == 24)
+            {
+                day_count_tb.Text += "1";
+            }
         }
 
         private void workh_TB_Scroll(object sender, EventArgs e)
         {
             trackbarvalue_lbl.Text = workh_TB.Value.ToString();
+            
         }
 
         private void Time_PB_Click(object sender, EventArgs e)
@@ -124,6 +136,26 @@ namespace _3.ora
             else
             {
                 visszajaro_lbl.Text = "Túl csóró vagy ehez";
+            }
+        }
+
+        public void Eves(int telitetseg)
+        {
+            hunger_PB.Value += telitetseg;
+        }
+
+        private void day_btn_Click(object sender, EventArgs e)
+        {
+            day_count_tb.Text += "1";
+            hunger_PB.Value -= 3;
+        }
+
+        public void Halal()
+        {
+            if(hunger_PB.Value == 0)
+            {
+             MessageBox.Show("Meghaltál!");
+                
             }
         }
     }
