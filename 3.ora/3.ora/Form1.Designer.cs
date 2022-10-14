@@ -43,6 +43,12 @@ namespace _3.ora
             this.trackbarvalue_lbl = new System.Windows.Forms.Label();
             this.progressbar_lbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.hunger_PB = new System.Windows.Forms.ProgressBar();
+            this.label2 = new System.Windows.Forms.Label();
+            this.day_btn = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.day_count_tb = new System.Windows.Forms.Label();
+            this.revive_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.workh_TB)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,6 +76,7 @@ namespace _3.ora
             this.visszajaro_lbl.Name = "visszajaro_lbl";
             this.visszajaro_lbl.Size = new System.Drawing.Size(144, 15);
             this.visszajaro_lbl.TabIndex = 2;
+            this.visszajaro_lbl.Text = "0";
             this.visszajaro_lbl.Click += new System.EventHandler(this.label1_Click);
             // 
             // penzosszeg_tb
@@ -79,16 +86,17 @@ namespace _3.ora
             this.penzosszeg_tb.Name = "penzosszeg_tb";
             this.penzosszeg_tb.Size = new System.Drawing.Size(100, 23);
             this.penzosszeg_tb.TabIndex = 3;
+            this.penzosszeg_tb.Text = "0";
             // 
             // menu_lbl
             // 
             this.menu_lbl.AutoSize = true;
             this.menu_lbl.Location = new System.Drawing.Point(48, 185);
             this.menu_lbl.Name = "menu_lbl";
-            this.menu_lbl.Size = new System.Drawing.Size(156, 165);
+            this.menu_lbl.Size = new System.Drawing.Size(110, 165);
             this.menu_lbl.TabIndex = 4;
             this.menu_lbl.Text = "Menü:\r\n\r\n-Pizza: 450 Ft\r\n-Hamburger: 750 Ft\r\n-Kóla: 650 Ft\r\n-Popcorn: 100 Ft\r\n-Sa" +
-    "láta: 1000 Ft\r\n-Villanyszámla: 100000000 Ft\r\n\r\n\r\n\r\n";
+    "láta: 1000 Ft\r\n\r\n\r\n\r\n\r\n";
             this.menu_lbl.Click += new System.EventHandler(this.menu_lbl_Click);
             // 
             // item_lbl
@@ -141,12 +149,10 @@ namespace _3.ora
             // 
             this.workh_TB.Location = new System.Drawing.Point(526, 305);
             this.workh_TB.Maximum = 24;
-            this.workh_TB.Minimum = 1;
             this.workh_TB.Name = "workh_TB";
             this.workh_TB.Size = new System.Drawing.Size(233, 45);
             this.workh_TB.TabIndex = 10;
             this.workh_TB.Tag = "";
-            this.workh_TB.Value = 1;
             this.workh_TB.Scroll += new System.EventHandler(this.workh_TB_Scroll);
             // 
             // trackbarvalue_lbl
@@ -154,14 +160,15 @@ namespace _3.ora
             this.trackbarvalue_lbl.AutoSize = true;
             this.trackbarvalue_lbl.Location = new System.Drawing.Point(616, 287);
             this.trackbarvalue_lbl.Name = "trackbarvalue_lbl";
-            this.trackbarvalue_lbl.Size = new System.Drawing.Size(0, 15);
+            this.trackbarvalue_lbl.Size = new System.Drawing.Size(13, 15);
             this.trackbarvalue_lbl.TabIndex = 11;
+            this.trackbarvalue_lbl.Text = "0";
             // 
             // progressbar_lbl
             // 
             this.progressbar_lbl.AutoSize = true;
             this.progressbar_lbl.BackColor = System.Drawing.Color.Transparent;
-            this.progressbar_lbl.Location = new System.Drawing.Point(622, 351);
+            this.progressbar_lbl.Location = new System.Drawing.Point(694, 384);
             this.progressbar_lbl.Name = "progressbar_lbl";
             this.progressbar_lbl.Size = new System.Drawing.Size(0, 15);
             this.progressbar_lbl.TabIndex = 12;
@@ -175,11 +182,73 @@ namespace _3.ora
             this.label1.TabIndex = 13;
             this.label1.Text = "órát fogsz dolgozni.";
             // 
+            // hunger_PB
+            // 
+            this.hunger_PB.Location = new System.Drawing.Point(562, 15);
+            this.hunger_PB.Name = "hunger_PB";
+            this.hunger_PB.Size = new System.Drawing.Size(226, 23);
+            this.hunger_PB.TabIndex = 14;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(656, 41);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 15);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Éhség";
+            // 
+            // day_btn
+            // 
+            this.day_btn.Location = new System.Drawing.Point(52, 380);
+            this.day_btn.Name = "day_btn";
+            this.day_btn.Size = new System.Drawing.Size(126, 23);
+            this.day_btn.TabIndex = 16;
+            this.day_btn.Text = "Következő nap";
+            this.day_btn.UseVisualStyleBackColor = true;
+            this.day_btn.Click += new System.EventHandler(this.day_btn_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(234, 413);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(29, 15);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Nap";
+            // 
+            // day_count_tb
+            // 
+            this.day_count_tb.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.day_count_tb.Location = new System.Drawing.Point(184, 384);
+            this.day_count_tb.Name = "day_count_tb";
+            this.day_count_tb.Size = new System.Drawing.Size(144, 15);
+            this.day_count_tb.TabIndex = 19;
+            this.day_count_tb.Tag = "";
+            this.day_count_tb.Text = "1";
+            // 
+            // revive_btn
+            // 
+            this.revive_btn.Location = new System.Drawing.Point(341, 165);
+            this.revive_btn.Name = "revive_btn";
+            this.revive_btn.Size = new System.Drawing.Size(127, 55);
+            this.revive_btn.TabIndex = 20;
+            this.revive_btn.Text = "Heroes never die!";
+            this.revive_btn.UseVisualStyleBackColor = true;
+            this.revive_btn.Visible = false;
+            this.revive_btn.Click += new System.EventHandler(this.revive_btn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.revive_btn);
+            this.Controls.Add(this.day_count_tb);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.day_btn);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.hunger_PB);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.progressbar_lbl);
             this.Controls.Add(this.trackbarvalue_lbl);
@@ -219,6 +288,12 @@ namespace _3.ora
         private System.Windows.Forms.Label trackbarvalue_lbl;
         private System.Windows.Forms.Label progressbar_lbl;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ProgressBar hunger_PB;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button day_btn;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label day_count_tb;
+        private System.Windows.Forms.Button revive_btn;
     }
 }
 
