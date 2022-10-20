@@ -29,6 +29,7 @@ namespace _3.ora
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.nev_tb = new System.Windows.Forms.TextBox();
             this.ok_btn = new System.Windows.Forms.Button();
             this.visszajaro_lbl = new System.Windows.Forms.Label();
@@ -233,7 +234,7 @@ namespace _3.ora
             this.revive_btn.Name = "revive_btn";
             this.revive_btn.Size = new System.Drawing.Size(127, 55);
             this.revive_btn.TabIndex = 20;
-            this.revive_btn.Text = "Heroes never die!";
+            this.revive_btn.Text = "Új élet";
             this.revive_btn.UseVisualStyleBackColor = true;
             this.revive_btn.Visible = false;
             this.revive_btn.Click += new System.EventHandler(this.revive_btn_Click);
@@ -263,8 +264,9 @@ namespace _3.ora
             this.Controls.Add(this.visszajaro_lbl);
             this.Controls.Add(this.ok_btn);
             this.Controls.Add(this.nev_tb);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Harmadik ora";
+            this.Text = "Life sim";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.workh_TB)).EndInit();
             this.ResumeLayout(false);
