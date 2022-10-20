@@ -1,0 +1,5 @@
+C:\Users\user\Desktop\New folder\3.ora.exe
+C:\Users\user\Desktop\New folder\3.ora.dll
+C:\Users\user\Desktop\New folder\3.ora.deps.json
+C:\Users\user\Desktop\New folder\3.ora.runtimeconfig.json
+C:\Users\user\Desktop\New folder\3.ora.pdb
