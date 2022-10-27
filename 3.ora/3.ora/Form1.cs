@@ -14,8 +14,11 @@ namespace _3.ora
     public partial class Form1 : Form
     {
         int penztarca;
-        int napokszama = 1;
+        int napokszama = 0;
         int ehseg = 100;
+        int munkahely = -1;
+        List<String> works = new List<string>();
+        
        
         
         
@@ -24,13 +27,18 @@ namespace _3.ora
         {
             InitializeComponent();
             hunger_PB.Value = ehseg;
+            workplace();
         }
 
 
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            works.Add("McDonaldsba takarító");
+            works.Add("CEO of Tesla");
+            works.Add("Iráni atomerőmű");
+            works.Add("Lapát támasztó");
+            works.Add("Logisztikai Szakasszisztens");
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -61,11 +69,16 @@ namespace _3.ora
                 Fuggveny(100);
                 Eves(4);
             }
-            else if (nev == "salata")
+            else if (nev == "saláta")
             {
                 Fuggveny(1000);
                 Eves(3);
 
+            }
+            else if (nev == "kőműves actimel")
+            {
+                Fuggveny(300);
+                Eves(100);
             }
             
             
@@ -102,7 +115,7 @@ namespace _3.ora
             for (int i = 0; i < 100; i++) 
             {
                 Time_PB.Value = i;
-                Thread.Sleep(10 * Munkaora);
+                Thread.Sleep(1 * Munkaora);
 
             }
             penzosszeg_tb.Text = penztarca.ToString();
@@ -206,6 +219,78 @@ namespace _3.ora
             nev_tb.Text = "";
             napokszama = 0;
             day_count_tb.Text = (napokszama).ToString();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Biztos ki akarsz lépni?", "Kilépés", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                e.Cancel = true;
+                
+            }
+            /*for (int i = 0; i < 19; i++)
+            {
+                if (MessageBox.Show("Hiba történt! \n Kérem próbálja meg újra.", "Hiba", MessageBoxButtons.RetryCancel) == DialogResult.Cancel)
+                {
+                    e.Cancel = true;
+                    i = 100;
+                }
+            }*/
+        }
+
+       public void workplace()
+        {
+            if(munkahely < 0) 
+            {
+                Work_lbl.Text = "Munkanélküli";
+                work_btn.Enabled = false;
+                workh_TB.Enabled = false;
+                palinka_lbl.Visible = false;
+            }
+            else
+            {
+                Work_lbl.Text = works[munkahely];
+                work_btn.Enabled = true;
+                workh_TB.Enabled = true;
+                palinka_lbl.Visible = false;
+            }
+
+            if (munkahely == 3 || munkahely == 4) 
+            {
+                palinka_lbl.Visible = true;
+            }
+            
+            
+        }
+        
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void workplaces_cbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void worksearch_btn_Click(object sender, EventArgs e)
+        {
+            int work = workplaces_cbx.SelectedIndex;
+            Random workp = new Random();
+            munkahely = workp.Next(6)-1;
+            workplace();
+            
+            
+        }
+
+        private void label4_Click_2(object sender, EventArgs e)
+        {
+
         }
     }
 }

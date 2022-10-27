@@ -50,6 +50,11 @@ namespace _3.ora
             this.label3 = new System.Windows.Forms.Label();
             this.day_count_tb = new System.Windows.Forms.Label();
             this.revive_btn = new System.Windows.Forms.Button();
+            this.placeholder_lbl = new System.Windows.Forms.Label();
+            this.Work_lbl = new System.Windows.Forms.Label();
+            this.worksearch_btn = new System.Windows.Forms.Button();
+            this.workplaces_cbx = new System.Windows.Forms.ComboBox();
+            this.palinka_lbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.workh_TB)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,10 +96,9 @@ namespace _3.ora
             // 
             // menu_lbl
             // 
-            this.menu_lbl.AutoSize = true;
-            this.menu_lbl.Location = new System.Drawing.Point(48, 185);
+            this.menu_lbl.Location = new System.Drawing.Point(43, 137);
             this.menu_lbl.Name = "menu_lbl";
-            this.menu_lbl.Size = new System.Drawing.Size(110, 165);
+            this.menu_lbl.Size = new System.Drawing.Size(110, 107);
             this.menu_lbl.TabIndex = 4;
             this.menu_lbl.Text = "Menü:\r\n\r\n-Pizza: 450 Ft\r\n-Hamburger: 750 Ft\r\n-Kóla: 650 Ft\r\n-Popcorn: 100 Ft\r\n-Sa" +
     "láta: 1000 Ft\r\n\r\n\r\n\r\n\r\n";
@@ -205,7 +209,7 @@ namespace _3.ora
             this.day_btn.Name = "day_btn";
             this.day_btn.Size = new System.Drawing.Size(126, 23);
             this.day_btn.TabIndex = 16;
-            this.day_btn.Text = "Következő nap";
+            this.day_btn.Text = "Irány az ágy!";
             this.day_btn.UseVisualStyleBackColor = true;
             this.day_btn.Click += new System.EventHandler(this.day_btn_Click);
             // 
@@ -226,7 +230,7 @@ namespace _3.ora
             this.day_count_tb.Size = new System.Drawing.Size(144, 15);
             this.day_count_tb.TabIndex = 19;
             this.day_count_tb.Tag = "";
-            this.day_count_tb.Text = "1";
+            this.day_count_tb.Text = "0";
             // 
             // revive_btn
             // 
@@ -239,11 +243,70 @@ namespace _3.ora
             this.revive_btn.Visible = false;
             this.revive_btn.Click += new System.EventHandler(this.revive_btn_Click);
             // 
+            // placeholder_lbl
+            // 
+            this.placeholder_lbl.AutoSize = true;
+            this.placeholder_lbl.Location = new System.Drawing.Point(524, 262);
+            this.placeholder_lbl.Name = "placeholder_lbl";
+            this.placeholder_lbl.Size = new System.Drawing.Size(105, 15);
+            this.placeholder_lbl.TabIndex = 21;
+            this.placeholder_lbl.Text = "Jelenlegi munkád: ";
+            this.placeholder_lbl.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // Work_lbl
+            // 
+            this.Work_lbl.AutoSize = true;
+            this.Work_lbl.Location = new System.Drawing.Point(655, 261);
+            this.Work_lbl.Name = "Work_lbl";
+            this.Work_lbl.Size = new System.Drawing.Size(0, 15);
+            this.Work_lbl.TabIndex = 22;
+            this.Work_lbl.Click += new System.EventHandler(this.label4_Click_1);
+            // 
+            // worksearch_btn
+            // 
+            this.worksearch_btn.Location = new System.Drawing.Point(680, 212);
+            this.worksearch_btn.Name = "worksearch_btn";
+            this.worksearch_btn.Size = new System.Drawing.Size(104, 23);
+            this.worksearch_btn.TabIndex = 23;
+            this.worksearch_btn.Text = "Keress munkát!";
+            this.worksearch_btn.UseVisualStyleBackColor = true;
+            this.worksearch_btn.Click += new System.EventHandler(this.worksearch_btn_Click);
+            // 
+            // workplaces_cbx
+            // 
+            this.workplaces_cbx.FormattingEnabled = true;
+            this.workplaces_cbx.Items.AddRange(new object[] {
+            "McDonaldsba takarító",
+            "CEO of Tesla",
+            "Iráni atomerőmű",
+            "Lapát támasztó",
+            "Logisztikai Szakasszisztens"});
+            this.workplaces_cbx.Location = new System.Drawing.Point(510, 212);
+            this.workplaces_cbx.Name = "workplaces_cbx";
+            this.workplaces_cbx.Size = new System.Drawing.Size(164, 23);
+            this.workplaces_cbx.TabIndex = 24;
+            this.workplaces_cbx.SelectedIndexChanged += new System.EventHandler(this.workplaces_cbx_SelectedIndexChanged);
+            // 
+            // palinka_lbl
+            // 
+            this.palinka_lbl.AutoSize = true;
+            this.palinka_lbl.Location = new System.Drawing.Point(43, 244);
+            this.palinka_lbl.Name = "palinka_lbl";
+            this.palinka_lbl.Size = new System.Drawing.Size(142, 15);
+            this.palinka_lbl.TabIndex = 25;
+            this.palinka_lbl.Text = "-Kőműves Actimel: 300 Ft";
+            this.palinka_lbl.Click += new System.EventHandler(this.label4_Click_2);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.palinka_lbl);
+            this.Controls.Add(this.workplaces_cbx);
+            this.Controls.Add(this.worksearch_btn);
+            this.Controls.Add(this.Work_lbl);
+            this.Controls.Add(this.placeholder_lbl);
             this.Controls.Add(this.revive_btn);
             this.Controls.Add(this.day_count_tb);
             this.Controls.Add(this.label3);
@@ -267,6 +330,7 @@ namespace _3.ora
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Life sim";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.workh_TB)).EndInit();
             this.ResumeLayout(false);
@@ -296,6 +360,11 @@ namespace _3.ora
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label day_count_tb;
         private System.Windows.Forms.Button revive_btn;
+        private System.Windows.Forms.Label placeholder_lbl;
+        private System.Windows.Forms.Label Work_lbl;
+        private System.Windows.Forms.Button worksearch_btn;
+        private System.Windows.Forms.ComboBox workplaces_cbx;
+        private System.Windows.Forms.Label palinka_lbl;
     }
 }
 
